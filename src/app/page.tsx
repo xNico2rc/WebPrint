@@ -69,28 +69,30 @@ export default function Home() {
             </article>
           </div>
         </section>
-        <motion.div
-          initial={{ y: 270 }}
-          animate={{ y: 0 }}
-          transition={{
-            duration: 2,
-            ease: [0.33, 1, 0.68, 1],
-            delay: 1,
-          }}
-          className="w-full max-h-[688px] bg-charade-500 rounded-2xl mt-8"
-        >
-          <Image
-            src={mainImage}
-            alt="imagen de mockup de camiseta estampada "
-            priority
-            style={{
-              objectFit: "cover", // cover, contain, none
-              borderRadius: "16px",
-              aspectRatio: "16/9",
-              maxHeight: "688px",
+        <div className="w-full max-h-[688px]  rounded-2xl mt-8 overflow-hidden">
+          <motion.div
+            initial={{ y: 270 }}
+            animate={{ y: 0 }}
+            transition={{
+              duration: 2,
+              ease: [0.33, 1, 0.68, 1],
+              delay: 1,
             }}
-          />
-        </motion.div>
+            className="w-full max-h-[688px] rounded-2xl mt-8"
+          >
+            <Image
+              src={mainImage}
+              alt="imagen de mockup de camiseta estampada "
+              priority
+              style={{
+                objectFit: "cover", // cover, contain, none
+                borderRadius: "16px",
+                aspectRatio: "16/9",
+                maxHeight: "688px",
+              }}
+            />
+          </motion.div>
+        </div>
         <section className=" flex xl:flex-row flex-col justify-between gap-32 mt-16 max-w-screen-2xl ">
           <h4 className=" font-bold text-2xl">Desde estampados </h4>
           <article>
