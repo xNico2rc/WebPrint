@@ -4,17 +4,18 @@ import mainImage from "@/assets/image_main.jpg";
 import laptopImage from "@/assets/mockup_laptop.png";
 import phoneImage from "@/assets/mockup_phone.png";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "@/components/svg/Arrowright";
 import { CarouselSize } from "@/components/Carousel";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ButtonDemo } from "@/components/ButtonAction";
+import { useEffect } from "react";
+import { Loader } from "@/components/Loader";
 
 export default function Home() {
   return (
     <>
+      {/* <Loader /> */}
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
