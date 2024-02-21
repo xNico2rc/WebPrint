@@ -1,113 +1,207 @@
+"use client";
+import { motion } from "framer-motion";
+import mainImage from "@/assets/image_main.jpg";
+import laptopImage from "@/assets/mockup_laptop.png";
+import phoneImage from "@/assets/mockup_phone.png";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "@/components/svg/Arrowright";
+import { CarouselSize } from "@/components/Carousel";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { ButtonDemo } from "@/components/ButtonAction";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
+        className=" flex flex-col items-center justify-center max-w-[90dvw] mx-auto "
+      >
+        <section className=" w-full flex flex-col items-center justify-center max-w-screen-2xl ">
+          <div className="w-full flex items-center justify-center overflow-hidden ">
+            <motion.h1
+              initial={{ y: 250 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 2, ease: [0.33, 1, 0.68, 1], delay: 0.5 }}
+              className=" text-6xl xl:text-[200px] font-bold uppercase mt-8 xl:mt-0"
+            >
+              WebPrint®
+            </motion.h1>
+          </div>
+          <div className="flex xl:flex-row flex-col items-center justify-between gap-8 w-full mt-4 xl:mt-0">
+            <article className=" max-w-[500px]  overflow-hidden">
+              <motion.p
+                initial={{ y: 210 }}
+                animate={{ y: 0 }}
+                transition={{
+                  duration: 2,
+                  ease: [0.33, 1, 0.68, 1],
+                  delay: 0.7,
+                }}
+                className=" text-charade-600 dark:text-charade-300  text-xl"
+              >
+                Desde estampados de camisetas personalizadas que reflejan tu
+                estilo hasta la creación de páginas web estáticas elegantes que
+                destacan tu presencia en línea.
+              </motion.p>
+            </article>
+            <ButtonDemo />
+            <article className=" max-w-[500px] overflow-hidden">
+              <motion.p
+                initial={{ y: 210 }}
+                animate={{ y: 0 }}
+                transition={{
+                  duration: 2,
+                  ease: [0.33, 1, 0.68, 1],
+                  delay: 0.9,
+                }}
+                className=" text-charade-600 dark:text-charade-300  text-xl"
+              >
+                Desde estampados de camisetas personalizadas que reflejan tu
+                estilo hasta la creación de páginas web estáticas elegantes que
+                destacan tu presencia en línea.
+              </motion.p>
+            </article>
+          </div>
+        </section>
+        <motion.div
+          initial={{ y: 270 }}
+          animate={{ y: 0 }}
+          transition={{
+            duration: 2,
+            ease: [0.33, 1, 0.68, 1],
+            delay: 1,
+          }}
+          className="w-full max-h-[688px] bg-charade-500 rounded-2xl mt-8"
+        >
+          <Image
+            src={mainImage}
+            alt="imagen de mockup de camiseta estampada "
+            priority
+            style={{
+              objectFit: "cover", // cover, contain, none
+              borderRadius: "16px",
+              aspectRatio: "16/9",
+              maxHeight: "688px",
+            }}
+          />
+        </motion.div>
+        <section className=" flex xl:flex-row flex-col justify-between gap-32 mt-16 max-w-screen-2xl ">
+          <h4 className=" font-bold text-2xl">Desde estampados </h4>
+          <article>
+            <p className=" text-3xl ">
+              Desde estampados de camisetas personalizadas que reflejan tu
+              estilo hasta la creación de páginas web estáticas elegantes que
+              destacan tu presencia en línea.
+            </p>{" "}
+          </article>
+          <h4 className=" font-bold text-2xl">Desde estampados </h4>
+        </section>
+      </motion.main>
+      <section className="w-full max-w-[90dvw] mx-auto mt-20" id="modelos">
+        <CarouselSize />
+      </section>
+      <section className="w-full max-w-[90dvw]  mx-auto h-screen flex justify-center mt-32 flex-col">
+        <h2 className=" text-6xl xl:text-8xl font-bold capitalize">
+          creemos que la moda es una forma de arte,{" "}
+          <span className=" text-charade-600 dark:text-charade-400 ">
+            y cada estampado cuenta una historia única.
+          </span>
+        </h2>
+        <div className=" flex items-center justify-between gap-16 mb-4 xl:-my-6">
+          <hr className=" border-1 w-full border-charade-600" />
+          <ButtonDemo />
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
+        <p className="max-w-[790px] text-xl">
+          Desde estampados de camisetas personalizadas que reflejan tu estilo
+          hasta la creación de páginas web estáticas elegantes que destacan tu
+          presencia en línea.
+        </p>
+        <Badge className="mt-8 text-base bg-charade-950 max-w-48 flex justify-center items-center">
+          Desde estampados{" "}
+        </Badge>
+      </section>
+      <section className="w-full max-w-[90dvw] mx-auto mt-32 flex flex-col justify-center items-center">
+        <h2 className=" text-6xl  xl:text-8xl text-center font-bold">
+          Páginas Web Estáticas{" "}
+          <span className=" hidden xl:inline">
+            que Dejan una Impresión Duradera
+          </span>
+        </h2>
+        <p className=" text-charade-600 dark:text-charade-300 text-xl text-center max-w-[800px] mt-4">
+          En el corazón de Web Print está nuestra pasión por la innovación.
+          Además de ofrecer estampados únicos, también impulsamos tu presencia
+          en línea con nuestras páginas web estáticas.
+        </p>
+        <div className="flex w-full max-w-lg items-center space-x-2 mt-8">
+          <Input
+            type="email"
+            placeholder="Email"
+            className=" border-charade-600"
+          />
+          <Button type="submit">Contactanos Ya</Button>
+        </div>
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
+          src={laptopImage}
+          alt="imagen de mockup de camiseta estampada "
           priority
+          style={{
+            objectFit: "cover", // cover, contain, none
+            borderRadius: "16px",
+            aspectRatio: "16/9",
+            maxHeight: "670px",
+          }}
+          className=" mt-16 xl:mt-0"
         />
-      </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+        <p className=" text-xl mt-16 xl:mt-8 max-w-screen-lg">
+          Nuestro equipo de desarrolladores combina la creatividad con la
+          funcionalidad, creando sitios web que no solo son visualmente
+          atractivos sino también eficientes. Desde portfolios personales hasta
+          páginas de negocios, te ayudamos a destacar en el vasto mundo digital.
+        </p>
+      </section>
+      <section className="mt-32 max-w-[90dvw] mx-auto">
+        <div className=" w-full gap-8  flex flex-col-reverse xl:flex-row justify-between xl:items-center">
+          <h2 className=" xl:w-[70%] text-6xl text-center font-bold">
+            Optimización para Dispositivos Móviles: Tu Sitio, en Todas Partes
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <div className="  flex xl:justify-end items-start">
+            <Badge className="mt-8 text-base bg-charade-950 h-10 max-w-48 flex justify-center items-center">
+              estampados{" "}
+            </Badge>
+          </div>
+        </div>
+        <article className=" flex flex-col xl:flex-row items-center">
+          <Image
+            src={phoneImage}
+            alt="imagen de mockup de camiseta estampada "
+            priority
+            style={{
+              objectFit: "contain", // cover, contain, none
+              borderRadius: "16px",
+              aspectRatio: "9/16",
+              maxHeight: "688px",
+            }}
+            className=" xl:w-1/2 mt-8 xl:mt-0"
+          />
+          <div className=" xl:w-1/2 grid grid-cols-1 gap-8 mt-16 xl:mt-0">
+            <p className=" text-3xl max-w-screen-md">
+              El mundo se mueve rápidamente, y tu presencia en línea debe seguir
+              el ritmo. Todas nuestras páginas web estáticas están diseñadas y
+              optimizadas para funcionar perfectamente en dispositivos
+              móviles.Desde smartphones hasta tabletas, tu sitio se verá y
+              funcionará de manera impecable, sin importar cómo tus visitantes
+              el accedan.
+            </p>
+            <ButtonDemo />
+          </div>
+        </article>
+      </section>
+    </>
   );
 }

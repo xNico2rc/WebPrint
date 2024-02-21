@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// Supports weights 100-900
+import "@fontsource-variable/onest";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Providers from "./providers";
+import { NavbarDemo } from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +16,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="es" className="light">
+      <body
+        id="inicio"
+        className="bg-charade-50 dark:bg-charade-950 dark:text-charade-50 text-charade-950 transition-all duration-300"
+      >
+        <Providers
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NavbarDemo />
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }
