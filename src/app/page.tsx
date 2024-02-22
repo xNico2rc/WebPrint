@@ -71,8 +71,8 @@ export default function Home() {
         </section>
         <div className="w-full max-h-[688px]  rounded-2xl mt-8 overflow-hidden">
           <motion.div
-            initial={{ y: 270 }}
-            animate={{ y: 0 }}
+            initial={{ y: 270, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{
               duration: 2,
               ease: [0.33, 1, 0.68, 1],
@@ -115,8 +115,8 @@ export default function Home() {
             y cada estampado cuenta una historia única.
           </span>
         </h2>
-        <div className=" flex items-center justify-between gap-16 mb-4 xl:-my-6">
-          <hr className=" border-1 w-full border-charade-600" />
+        <div className=" flex items-center justify-between gap-16 mb-4 my-8 xl:-my-6 ">
+          <hr className=" hidden md:inline border-1 w-[calc(100%-200px)] border-charade-600" />
           <ButtonDemo />
         </div>
         <p className="max-w-[790px] text-xl">
