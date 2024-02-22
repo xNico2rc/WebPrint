@@ -17,8 +17,8 @@ export const NavbarDemo = () => {
   };
 
   // Ejemplo de cómo usar la función cuando haces clic en un enlace
-  const handleAnchorClick = (event) => {
-    const anchor = event.target.getAttribute("href");
+  const handleAnchorClick = (e: any) => {
+    const anchor = e.target.getAttribute("href");
     if (anchor) {
       scrollToAnchor(anchor);
     }
