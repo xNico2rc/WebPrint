@@ -17,7 +17,7 @@ export function CarouselSize() {
       opts={{
         align: "start",
       }}
-      className="w-full bg-white grid place-items-center"
+      className="w-full  grid place-items-center"
       plugins={[
         Autoplay({
           delay: 2500,
