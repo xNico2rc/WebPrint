@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 // Supports weights 100-900
+import { NavbarDemo } from "@/components/Navbar";
 import "@fontsource-variable/onest";
 import "./globals.css";
 import Providers from "./providers";
-import { NavbarDemo } from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,7 +28,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <NavbarDemo />
-          {children}
+          <div className=" max-w-screen-xl px-5 md:px-14 mx-auto ">
+            {children}
+          </div>
         </Providers>
       </body>
     </html>

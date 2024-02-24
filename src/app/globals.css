@@ -5,5 +5,9 @@
  body {
   font-family: 'Onest Variable', sans-serif;
   overflow-x: hidden;
-  width: 100dvw;
+}
+
+.bento3{
+background: #22282F;
+background: linear-gradient(315deg, #22282F, #394353);
 }

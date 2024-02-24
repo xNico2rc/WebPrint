@@ -29,9 +29,9 @@ export const NavbarDemo = () => {
       initial={{ scaleX: 0 }}
       animate={{ scaleX: 1 }}
       transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-      className="w-full h-20   grid place-items-center sticky top-0  border-b-[1px] z-50 border-charade-300 dark:border-charade-700s bg-charade-50 dark:bg-charade-950 dark:text-charade-50 text-charade-950 overflow-hidden"
+      className="w-full h-20   grid place-items-center sticky top-0  border-b-[1px] z-50 border-charade-300 dark:border-charade-700s bg-charade-50 dark:bg-charade-950 dark:text-charade-50 text-charade-950 overflow-hidden px-4 md:px-16"
     >
-      <div className=" w-full max-w-[90dvw] mx-auto">
+      <div className=" w-full mx-auto">
         <motion.div
           initial={{ y: 65 }}
           animate={{ y: 0 }}
